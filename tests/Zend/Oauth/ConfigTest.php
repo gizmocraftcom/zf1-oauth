@@ -20,6 +20,7 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\Group;
 
 /**
  * @category   Zend
@@ -27,8 +28,8 @@
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Oauth
  */
+#[Group('Zend_Oauth')]
 class Zend_Oauth_ConfigTest extends PHPUnit\Framework\TestCase
 {
     protected $config;
@@ -38,9 +39,7 @@ class Zend_Oauth_ConfigTest extends PHPUnit\Framework\TestCase
         $this->config = new Zend_Oauth_Config();
     }
 
-    /**
-     * @group ZF-12488
-     */
+    #[Group('ZF-12488')]
     public function testAllowsOptionsAsRequestMethod()
     {
         $this->config->setRequestMethod(Zend_Oauth::OPTIONS);

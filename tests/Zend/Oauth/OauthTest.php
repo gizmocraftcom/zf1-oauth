@@ -20,6 +20,8 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Group;
 
 class Test_Http_Client_19485876 extends Zend_Http_Client
 {
@@ -31,8 +33,8 @@ class Test_Http_Client_19485876 extends Zend_Http_Client
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Oauth
  */
+#[Group('Zend_Oauth')]
 class Zend_OauthTest extends PHPUnit\Framework\TestCase
 {
     public function teardown(): void
@@ -65,10 +67,8 @@ class Zend_OauthTest extends PHPUnit\Framework\TestCase
         $this->assertEquals(null, $resetClient->getHeader('Authorization'));
     }
 
-    /**
-     * @group ZF-10182
-     * @dataProvider providerOauthClientOauthOptions
-     */
+    #[Group('ZF-10182')]
+    #[DataProvider('providerOauthClientOauthOptions')]
     public function testOauthClientOauthOptionsInConstructor($oauthOptions)
     {
         $client = new Zend_Oauth_Client($oauthOptions);
@@ -76,10 +76,8 @@ class Zend_OauthTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('http://www.example.com', $client->getSiteUrl());
     }
 
-    /**
-     * @group ZF-10182
-     * @dataProvider providerOauthClientConfigHttpClient
-     */
+    #[Group('ZF-10182')]
+    #[DataProvider('providerOauthClientConfigHttpClient')]
     public function testOauthClientConfigHttpClientInConstructor($configHttpClient, $expected)
     {
         $client = new Zend_Oauth_Client(null, null, $configHttpClient);
@@ -141,9 +139,7 @@ class Zend_OauthTest extends PHPUnit\Framework\TestCase
         );
     }
 
-    /**
-     * @group ZF-10851
-     */
+    #[Group('ZF-10851')]
     public function testOauthClientAcceptsRealmConfigurationOption()
     {
         $options = array(
@@ -154,9 +150,7 @@ class Zend_OauthTest extends PHPUnit\Framework\TestCase
         $this->assertEquals('http://www.example.com', $client->getRealm());
     }
 
-    /**
-     * @group ZF-10851
-     */
+    #[Group('ZF-10851')]
     public function testOauthClientPreparationWithRealmConfigurationOption()
     {
         $options = array(
@@ -177,9 +171,7 @@ class Zend_OauthTest extends PHPUnit\Framework\TestCase
         $this->assertStringContainsString('realm="someRealm"', $client->getHeader('Authorization'));
     }
 
-    /**
-     * @group ZF-11663
-     */
+    #[Group('ZF-11663')]
     public function testOauthClientAcceptsGetParametersThroughSetter()
     {
         $token = new Zend_Oauth_Token_Access();

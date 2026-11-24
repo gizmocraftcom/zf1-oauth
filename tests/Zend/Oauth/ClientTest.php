@@ -20,6 +20,7 @@
  * @version    $Id$
  */
 
+use PHPUnit\Framework\Attributes\Group;
 
 class Test_Oauth_Client extends Zend_Oauth_Client
 {
@@ -35,8 +36,8 @@ class Test_Oauth_Client extends Zend_Oauth_Client
  * @subpackage UnitTests
  * @copyright  Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license    http://framework.zend.com/license/new-bsd     New BSD License
- * @group      Zend_Oauth
  */
+#[Group('Zend_Oauth')]
 class Zend_Oauth_ClientTest extends PHPUnit\Framework\TestCase
 {
     protected $client;
@@ -46,9 +47,7 @@ class Zend_Oauth_ClientTest extends PHPUnit\Framework\TestCase
         $this->client = new Zend_Oauth_Client(array());
     }
 
-    /**
-     * @group ZF-12488
-     */
+    #[Group('ZF-12488')]
     public function testAllowsOptionsAsRequestMethod()
     {
         $this->client->setRequestMethod(Zend_Oauth_Client::OPTIONS);
