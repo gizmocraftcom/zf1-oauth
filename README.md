@@ -1,7 +1,6 @@
 # Zend Framework 1 - Oauth
 
 [![Build](https://github.com/gizmocraftcom/zf1-oauth/workflows/Build/badge.svg?event=push)](https://github.com/gizmocraftcom/zf1-oauth/actions?query=workflow%3ABuild+event%3Apush)
-[![codecov](https://codecov.io/gh/gizmocraftcom/zf1-oauth/branch/master/graph/badge.svg)](https://codecov.io/gh/gizmocraftcom/zf1-oauth)
 [![Latest Stable Version](https://poser.pugx.org/gizmocraft/zendframework1-oauth/v/stable)](https://packagist.org/packages/gizmocraft/zendframework1-oauth)
 [![Total Downloads](https://poser.pugx.org/gizmocraft/zendframework1-oauth/downloads)](https://packagist.org/packages/gizmocraft/zendframework1-oauth)
 [![License](https://poser.pugx.org/gizmocraft/zendframework1-oauth/license)](https://packagist.org/packages/gizmocraft/zendframework1-oauth)
